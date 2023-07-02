@@ -2,6 +2,7 @@ package com.example.watchvideo.base
 
 import android.annotation.SuppressLint
 import android.app.Dialog
+import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
@@ -30,8 +31,9 @@ abstract class BaseActivity<T : ViewDataBinding>(@LayoutRes val id: Int) : AppCo
 
     lateinit var binding: T
 
-
     abstract fun init()
+
+    lateinit var context: Context
 
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,6 +44,8 @@ abstract class BaseActivity<T : ViewDataBinding>(@LayoutRes val id: Int) : AppCo
 
         binding = DataBindingUtil.setContentView(this@BaseActivity, id) as T
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+
+        context = this
 
         init()
     }
@@ -86,7 +90,7 @@ abstract class BaseActivity<T : ViewDataBinding>(@LayoutRes val id: Int) : AppCo
 
     }
 
-    fun showErrorDialog() {
+    fun showErrorDialog(message: String? = null) {
 
         val dialog = Dialog(this)
         val binding = DataBindingUtil.inflate<DialogFailureBinding>(
@@ -94,17 +98,21 @@ abstract class BaseActivity<T : ViewDataBinding>(@LayoutRes val id: Int) : AppCo
         )
         dialog.setContentView(binding.root)
 
+        if (message != null) {
+            binding.tvTomorrow.text = message
+        }
+
         binding.clOk.setOnClickListener {
             dialog.dismiss()
         }
+
+        dialog.setCancelable(false)
         dialog.show()
 
         val displaymetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(displaymetrics)
-        val width = (displaymetrics.widthPixels * 0.8).toInt()
-        dialog.getWindow()!!.setLayout(width, ViewGroup.LayoutParams.WRAP_CONTENT)
-
-
+        val width = (displaymetrics.widthPixels * 0.9).toInt()
+        dialog.window!!.setLayout(width, ViewGroup.LayoutParams.WRAP_CONTENT)
     }
 
     fun startActivity(activity: Class<*>) {

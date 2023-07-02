@@ -297,5 +297,8 @@
     <string name="oops">Oops!</string>
     <string name="please_try_tomorrow">Please try tomorrow</string>
     <string name="thank_you">Thank you</string>
+    <string name="cancel">Cancel</string>
+    <string name="sure">Sure</string>
+    <string name="not_now">Not Now</string>
 
 </resources>

@@ -1,9 +1,5 @@
 package com.example.watchvideo.home
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import androidx.databinding.DataBindingUtil.setContentView
 import com.example.watchvideo.LuckySpinActivity
 import com.example.watchvideo.R
 import com.example.watchvideo.base.BaseActivity
