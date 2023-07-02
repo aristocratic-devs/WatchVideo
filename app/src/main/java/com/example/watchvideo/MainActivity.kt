@@ -11,9 +11,10 @@ import com.example.watchvideo.privacy_policy.ui.PrivacyPolicyActivity
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     override fun init() {
+        loadNativeAd(binding.nativeAdContainer)
+        showFacebookBannerAd(binding.linearBannerAd)
 
         setClickListeners()
-
     }
 
     private fun setClickListeners() {
@@ -22,8 +23,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
             try {
                 startActivity(
                     Intent(
-                        Intent.ACTION_VIEW,
-                        Uri.parse("market://details?id=$packageName")
+                        Intent.ACTION_VIEW, Uri.parse("market://details?id=$packageName")
                     )
                 )
             } catch (e: ActivityNotFoundException) {
@@ -37,7 +37,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
         }
 
         binding.ivStart.setOnClickListener {
-            startActivity(Intent(this, HomeActivity::class.java))}
+            startActivity(Intent(this, HomeActivity::class.java))
+        }
 
         binding.ivPrivacy.setOnClickListener {
             startActivity(Intent(this, PrivacyPolicyActivity::class.java))

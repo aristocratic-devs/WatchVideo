@@ -4,6 +4,7 @@ import android.app.Application
 import com.example.watchvideo.network.retrofit.AdsRetrofitClient
 import com.example.watchvideo.network.retrofit.AdsRetrofitService
 import com.example.watchvideo.utils.SharedPrefs
+import com.facebook.ads.AudienceNetworkAds
 
 class App : Application() {
 
@@ -16,6 +17,7 @@ class App : Application() {
             return instance
         }
 
+        // Initialize the Audience Network SDK
     }
 
 
@@ -26,6 +28,7 @@ class App : Application() {
         service = AdsRetrofitClient.getService()
         SharedPrefs(this)
 
+        AudienceNetworkAds.initialize(this)
     }
 
 

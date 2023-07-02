@@ -301,4 +301,11 @@
     <string name="sure">Sure</string>
     <string name="not_now">Not Now</string>
 
+    <string name="placeholder">placeholder</string>
+
+    <string name="facebook_native_ad">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
+    <string name="facebook_banner_ad">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>
+    <string name="facebook_inter_ad">VID_HD_16_9_15S_LINK#YOUR_PLACEMENT_ID</string>
+    <string name="showing_ads">Showing Ads</string>
+
 </resources>
