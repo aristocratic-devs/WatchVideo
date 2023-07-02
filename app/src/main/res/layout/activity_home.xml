@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_color">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_margin="@dimen/margin_internal"
+
+            android:src="@drawable/iv_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/earn_money"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/ivBack"
+            app:layout_constraintStart_toEndOf="@id/ivBack"
+            app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_internal"
+
+            app:layout_constraintBottom_toBottomOf="@id/ivBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivBack">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="@dimen/margin_internal"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/amountText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/amountText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="2437" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/llOptionContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivBack">
+
+            <TextView
+                android:id="@+id/quickOfferText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/quick_offer"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/luckSpinText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/lucky_spin"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/giftCardText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/gift_card"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/llOptionContainer">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clDailyActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tvDailyActivity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_internal"
+                        android:text="@string/daily_activity"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/llDailyCheck"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:background="@drawable/frame"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toStartOf="@id/llGreatVideo"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvDailyActivity">
+
+                        <ImageView
+                            android:id="@+id/ivDailCheck"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="@dimen/margin_internal"
+                            android:src="@drawable/dailycheck" />
+
+                        <TextView
+                            android:id="@+id/tvDailyCheck"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/daily_check"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/llGreatVideo"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:background="@drawable/frame"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/llDailyCheck"
+                        app:layout_constraintTop_toTopOf="@id/llDailyCheck">
+
+                        <ImageView
+                            android:id="@+id/ivGreatVideo"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="@dimen/margin_internal"
+                            android:src="@drawable/greatvideo" />
+
+                        <TextView
+                            android:id="@+id/tvGreatVideo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/great_video"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/llWithdraw"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:layout_marginTop="@dimen/margin_internal"
+                        android:background="@drawable/frame"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toStartOf="@id/llRandomCall"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/llDailyCheck">
+
+                        <ImageView
+                            android:id="@+id/ivWithdraw"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="@dimen/margin_internal"
+                            android:src="@drawable/withdraw" />
+
+                        <TextView
+                            android:id="@+id/tvWithdraw"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/withdraw"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/llRandomCall"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:background="@drawable/frame"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/llWithdraw"
+                        app:layout_constraintTop_toTopOf="@id/llWithdraw">
+
+                        <ImageView
+                            android:id="@+id/ivRandomCall"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_marginTop="@dimen/margin_internal"
+                            android:src="@drawable/random_call" />
+
+                        <TextView
+                            android:id="@+id/tvRandomCall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/random_call"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clFastEarn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/llOptionContainer">
+
+                    <TextView
+                        android:id="@+id/tvFastEarn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_internal"
+                        android:text="@string/fast_earn"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <LinearLayout
+                        android:id="@+id/llScratchCard"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:background="@drawable/frame"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toStartOf="@id/llSpinToWin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvFastEarn">
+
+                        <ImageView
+                            android:id="@+id/ivScratchCard"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="@dimen/margin_internal"
+                            android:src="@drawable/scratch_icon" />
+
+                        <TextView
+                            android:id="@+id/tvScratchCard"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/scratch_card"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/llSpinToWin"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:background="@drawable/frame"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/llScratchCard"
+                        app:layout_constraintTop_toTopOf="@id/llScratchCard">
+
+                        <ImageView
+                            android:id="@+id/ivSpinToWin"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="@dimen/margin_internal"
+                            android:src="@drawable/spin_to_win" />
+
+                        <TextView
+                            android:id="@+id/tvSpinToWin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/spin_to_win"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/llFlipCard"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:layout_marginTop="@dimen/margin_internal"
+                        android:background="@drawable/frame"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toStartOf="@id/llExtraCoin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/llScratchCard">
+
+                        <ImageView
+                            android:id="@+id/ivFlipCard"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="@dimen/margin_internal"
+                            android:src="@drawable/flipcard" />
+
+                        <TextView
+                            android:id="@+id/tvFlipCard"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/flip_card"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llExtraCoin"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:background="@drawable/frame"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/llFlipCard"
+                        app:layout_constraintTop_toTopOf="@id/llFlipCard">
+
+                        <ImageView
+                            android:id="@+id/ivExtraCoin"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="@dimen/margin_internal"
+                            android:src="@drawable/extracoin" />
+
+                        <TextView
+                            android:id="@+id/tvExtraCoin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/extra_coin"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clExtraEarn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/llOptionContainer">
+
+                    <TextView
+                        android:id="@+id/tvExtraEarn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_internal"
+                        android:text="@string/extra_earn"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <LinearLayout
+                        android:id="@+id/llLyricalVideo"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:background="@drawable/frame"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toStartOf="@id/llReferalCode"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvExtraEarn">
+
+                        <ImageView
+                            android:id="@+id/ivLyricalVideo"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="@dimen/margin_internal"
+                            android:src="@drawable/lyrical_video_icon" />
+
+                        <TextView
+                            android:id="@+id/tvLyricalVideo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lyrical_video"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llReferalCode"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:background="@drawable/frame"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/llLyricalVideo"
+                        app:layout_constraintTop_toTopOf="@id/llLyricalVideo">
+
+                        <ImageView
+                            android:id="@+id/ivReferalCode"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="@dimen/margin_internal"
+                            android:src="@drawable/referal_icon" />
+
+                        <TextView
+                            android:id="@+id/tvReferalCode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/referal_code"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/llInviteFriends"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:layout_marginTop="@dimen/margin_internal"
+                        android:background="@drawable/frame"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toStartOf="@id/llRate"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/llLyricalVideo">
+
+                        <ImageView
+                            android:id="@+id/ivInviteFriends"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="@dimen/margin_internal"
+                            android:src="@drawable/invitefriend" />
+
+                        <TextView
+                            android:id="@+id/tvInviteFriends"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/invite_friends"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/llRate"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:background="@drawable/frame"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/llInviteFriends"
+                        app:layout_constraintTop_toTopOf="@id/llInviteFriends">
+
+                        <ImageView
+                            android:id="@+id/ivRate"
+
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="@dimen/margin_internal"
+                            android:src="@drawable/rating" />
+
+                        <TextView
+                            android:id="@+id/tvRate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/rate"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

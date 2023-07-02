@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/app_color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivRateApp"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="@dimen/margin_internal"
+            android:contentDescription="@string/privacy"
+            android:src="@drawable/realocation_rate"
+            app:layout_constraintBottom_toBottomOf="@id/ivStart"
+            app:layout_constraintEnd_toStartOf="@id/ivStart"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivStart"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="@dimen/margin_internal"
+            android:src="@drawable/realocation_start"
+            app:layout_constraintBottom_toTopOf="@id/ivPrivacy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/ivRateApp" />
+
+        <ImageView
+            android:id="@+id/ivPrivacy"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="@dimen/margin_internal"
+            android:layout_marginBottom="@dimen/margin_internal"
+            android:contentDescription="@string/privacy"
+            android:src="@drawable/realocation_moreapp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ivShareApp"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivShareApp"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:contentDescription="@string/share_app"
+            android:src="@drawable/realocation_share"
+            app:layout_constraintBottom_toBottomOf="@id/ivPrivacy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/ivPrivacy" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
